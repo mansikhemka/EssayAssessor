@@ -47,4 +47,18 @@ for i in range(1,8):
     essays["string{0}".format(i)] = essay_vec
     
     
-    
+E = {}
+for i in range(1,8):
+    essay_set = essays["string{0}".format(i)]
+    ES = []
+    for j in range(len(essay_set)):
+        each_essay = []
+        sentences = essay_set[j]
+        for k in range(len(sentences)-1):
+            sentence=sentences[k]
+            for l in range(0, len(sentence)):
+                if(len(sentence[l])>0):
+                    each_essay.append(sentence[l])
+        ES.append(each_essay)
+        each_essay = []
+    E["string{0}".format(i)] = ES
